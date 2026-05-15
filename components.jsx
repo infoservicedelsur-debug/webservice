@@ -208,7 +208,7 @@ function Hero() {
         <div>
           <Eyebrow>Servicio técnico · Montevideo</Eyebrow>
           <h1 style={{ marginTop: 16 }}>
-            Es nuevo? Lo instalamos, <em>se rommpió? lo arreglamos hoy.</em>
+            Es nuevo? Lo instalamos, <em>se rompió? lo arreglamos hoy.</em>
           </h1>
           <p className="hero-lead">Reparamos e instalamos aires acondicionados, heladeras y lavarropas en todo Montevideo. Técnicos calificados, respuesta rápida y presupuesto sin cargo. Trabajamos todas las marcas.
 
