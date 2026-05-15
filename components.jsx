@@ -153,8 +153,13 @@ function Nav({ openMenu, setOpenMenu }) {
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  React.useEffect(() => {
+    document.body.style.overflow = openMenu ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [openMenu]);
   const close = () => setOpenMenu(false);
   return (
+    <>
     <div className={`nav-wrap ${scrolled ? "scrolled" : ""}`}>
       <div className="container nav">
         <a href="#inicio" className="brand" onClick={close}>
@@ -176,12 +181,13 @@ function Nav({ openMenu, setOpenMenu }) {
             <span className="pulse"></span>{PHONE_DISPLAY}
           </a>
           <a href="#contacto" className="btn btn-navy">Pedir presupuesto</a>
-          <button className="nav-burger" onClick={() => setOpenMenu((v) => !v)} aria-label="Menú">
+          <button className="nav-burger" onClick={() => setOpenMenu((v) => !v)} aria-label="Menú" aria-expanded={openMenu}>
             {openMenu ? <Icon.Close /> : <Icon.Menu />}
           </button>
         </div>
       </div>
-      <div className={`mobile-menu ${openMenu ? "open" : ""}`}>
+    </div>
+    <div className={`mobile-menu ${openMenu ? "open" : ""}`} aria-hidden={!openMenu}>
         <div className="mobile-menu-head">
           <a href="#inicio" className="brand" onClick={close}>
             <img className="brand-mark" src="assets/logo-mark.png" alt="" />
@@ -214,7 +220,7 @@ function Nav({ openMenu, setOpenMenu }) {
           <a href={`tel:${PHONE_RAW}`} className="mobile-menu-phone" onClick={close}>{PHONE_DISPLAY}</a>
         </div>
       </div>
-    </div>);
+    </>);
 
 }
 
