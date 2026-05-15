@@ -182,17 +182,37 @@ function Nav({ openMenu, setOpenMenu }) {
         </div>
       </div>
       <div className={`mobile-menu ${openMenu ? "open" : ""}`}>
-        <a href="#servicios" onClick={close}>Servicios</a>
-        <a href="#nosotros" onClick={close}>Nosotros</a>
-        <a href="#zona" onClick={close}>Zona de cobertura</a>
-        <a href="#opiniones" onClick={close}>Opiniones</a>
-        <a href="#contacto" onClick={close}>Contacto</a>
-        <a href={`tel:${PHONE_RAW}`} className="btn btn-primary" onClick={close}>
-          <Icon.Phone /> Llamar ahora
-        </a>
-        <a href={WA_URL} className="btn btn-wa" target="_blank" rel="noopener noreferrer" onClick={close}>
-          <Icon.WhatsApp /> Escribir por WhatsApp
-        </a>
+        <div className="mobile-menu-head">
+          <a href="#inicio" className="brand" onClick={close}>
+            <img className="brand-mark" src="assets/logo-mark.png" alt="" />
+            <div>
+              <div className="brand-name">Service del Sur</div>
+              <div className="brand-sub">Montevideo · Uruguay</div>
+            </div>
+          </a>
+          <button className="mobile-menu-close" onClick={() => setOpenMenu(false)} aria-label="Cerrar menú">
+            <Icon.Close />
+          </button>
+        </div>
+        <nav className="mobile-menu-links">
+          <a href="#servicios" onClick={close}>Servicios</a>
+          <a href="#nosotros" onClick={close}>Nosotros</a>
+          <a href="#zona" onClick={close}>Zona de cobertura</a>
+          <a href="#opiniones" onClick={close}>Opiniones</a>
+          <a href="#contacto" onClick={close}>Contacto</a>
+        </nav>
+        <div className="mobile-menu-cta">
+          <a href={`tel:${PHONE_RAW}`} className="btn btn-primary" onClick={close}>
+            <Icon.Phone /> Llamar ahora
+          </a>
+          <a href={WA_URL} className="btn btn-wa" target="_blank" rel="noopener noreferrer" onClick={close}>
+            <Icon.WhatsApp /> Escribir por WhatsApp
+          </a>
+        </div>
+        <div className="mobile-menu-foot">
+          <div className="mobile-menu-foot-label">Teléfono · WhatsApp</div>
+          <a href={`tel:${PHONE_RAW}`} className="mobile-menu-phone" onClick={close}>{PHONE_DISPLAY}</a>
+        </div>
       </div>
     </div>);
 
