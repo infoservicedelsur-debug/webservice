@@ -210,7 +210,7 @@ function Hero() {
           <h1 style={{ marginTop: 16 }}>
             Es nuevo? Lo instalamos, <em>se rompió? lo arreglamos hoy.</em>
           </h1>
-          <p className="hero-lead">Reparamos e instalamos aires acondicionados, heladeras y lavarropas en todo Montevideo. Técnicos calificados, respuesta rápida y presupuesto sin cargo. Trabajamos todas las marcas.
+          <p className="hero-lead">Reparamos e instalamos aires acondicionados, heladeras, lavarropas y secarropas en todo Montevideo y alrededores. Técnicos calificados, respuesta rápida y presupuesto en el acto. Trabajamos todas las marcas.
 
 
           </p>
@@ -221,7 +221,7 @@ function Hero() {
           <div className="hero-trust">
             <div className="trust-item"><Icon.Check /> Presupuesto inmediato</div>
             <div className="trust-item"><Icon.Check /> Garantía por escrito</div>
-            <div className="trust-item"><Icon.Check /> Atención el mismo día</div>
+            <div className="trust-item"><Icon.Check /> Atención en el día</div>
           </div>
         </div>
         <div className="hero-visual">
@@ -251,7 +251,7 @@ function Hero() {
 function Strip() {
   const items = [
   "Atención en el día",
-  "Presupuesto sin cargo",
+  "Presupuesto inmediato",
   "Garantía por escrito",
   "Técnicos matriculados",
   "Repuestos originales",
@@ -314,7 +314,7 @@ function WhyUs() {
   const items = [
   { num: "01", icon: <Icon.Tools />, title: "Técnicos calificados", body: "Equipo con formación específica y más de una década reparando electrodomésticos en Uruguay." },
   { num: "02", icon: <Icon.Bolt />, title: "Respuesta rápida", body: "Coordinamos la visita el mismo día o al siguiente. Sabemos que no podés esperar una semana." },
-  { num: "03", icon: <Icon.Spark />, title: "Presupuesto sin cargo", body: "Diagnosticamos sin costo y te entregamos un presupuesto claro antes de cualquier reparación." },
+  { num: "03", icon: <Icon.Spark />, title: "Presupuesto inmediato", body: "Diagnosticamos sin costo y te entregamos un presupuesto claro antes de cualquier reparación." },
   { num: "04", icon: <Icon.Shield />, title: "Atención que se nota", body: "Trato cercano, comunicación directa y garantía por escrito sobre cada trabajo realizado." }];
 
   return (
@@ -386,7 +386,7 @@ function ServiceArea() {
   const zones = [
   "Centro", "Pocitos", "Punta Carretas", "Cordón", "La Blanqueada", "Buceo",
   "Carrasco", "Malvín", "Parque Batlle", "Tres Cruces", "Prado", "Aguada",
-  "Sayago", "Maroñas", "Cerrito", "Paso Molino"];
+  "Sayago", "Maroñas", "Cerrito", "Paso Molino y más! Consultános."];
 
   return (
     <section className="section" id="zona">
@@ -457,7 +457,7 @@ function Quotes() {
         <div className="section-head">
           <div>
             <Eyebrow>Lo que dicen nuestros clientes</Eyebrow>
-            <h2 style={{ marginTop: 16 }}>Reseñas reales de vecinos de Montevideo.</h2>
+            <h2 style={{ marginTop: 16 }}>Reseñas reales de clientes.</h2>
           </div>
           <p>Cada visita termina con la pregunta más importante: ¿quedó funcionando bien? Si la respuesta es no, volvemos sin cargo.</p>
         </div>

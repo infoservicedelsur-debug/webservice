@@ -8,19 +8,19 @@ function App() {
     title: "Aires acondicionados",
     photo: "assets/aire.jpg",
     photoAlt: "Técnico reparando un aire acondicionado split",
-    copy: "Instalación, mantenimiento, recarga de gas y reparación de todo tipo de equipos split, multi-split y portátiles. Trabajamos con todas las marcas.",
+    copy: "Instalación, mantenimiento, recarga de gas y reparación de todo tipo de equipos split y multi-split . Trabajamos con todas las marcas.",
     features: [
     "Mantenimiento preventivo",
     "Recarga de gas refrigerante",
     "Reparación de placa electrónica",
     "Cambio de turbina y motor",
     "Limpieza de filtros y bobinas",
-    "Instalación de splits nuevos"],
+    "Instalación, desinstalación y reinstalación de equipos nuevos y usados"],
 
     ctaLabel: "Llamar por mi aire",
     photoLabel: "[ foto · técnico instalando split ]",
     icon: <Icon.AC />,
-    chip: "Pre-temporada",
+    chip: "Todas las marcas",
     reverse: false
   },
   {
@@ -32,7 +32,7 @@ function App() {
     copy: "Diagnosticamos fugas de gas, fallas de termostato, problemas de compresor y todo lo que impide que tu heladera enfríe como antes.",
     features: [
     "Heladera que no enfría",
-    "Cambio de compresor",
+    "Cambio de compresor y reparación placas electrónicas",
     "Carga de gas y soldadura",
     "Reparación de termostato",
     "Cambio de gomas y burletes",
@@ -41,13 +41,13 @@ function App() {
     ctaLabel: "Llamar por mi heladera",
     photoLabel: "[ foto · reparación de heladera en cocina ]",
     icon: <Icon.Fridge />,
-    chip: "Atención el mismo día",
+    chip: "Atención en el día",
     reverse: true
   },
   {
     id: "lavarropas",
     eyebrow: "Lavarropas",
-    title: "Lavarropas",
+    title: "Lavarropas y Secarropas",
     photo: "assets/lavarropas.jpg",
     photoAlt: "Técnico anotando un diagnóstico junto a un lavarropas",
     copy: "Reparación de lavarropas automáticos y semi-automáticos. Resolvemos pérdidas de agua, problemas eléctricos y fallas mecánicas con repuestos originales.",
