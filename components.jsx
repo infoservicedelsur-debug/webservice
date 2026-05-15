@@ -219,7 +219,7 @@ function Hero() {
             <WAButton>Escribir por WhatsApp</WAButton>
           </div>
           <div className="hero-trust">
-            <div className="trust-item"><Icon.Check /> Presupuesto sin cargo</div>
+            <div className="trust-item"><Icon.Check /> Presupuesto inmediato</div>
             <div className="trust-item"><Icon.Check /> Garantía por escrito</div>
             <div className="trust-item"><Icon.Check /> Atención el mismo día</div>
           </div>
@@ -321,8 +321,8 @@ function WhyUs() {
     <div className="why" id="nosotros">
       <div className="why-bg"></div>
       <Eyebrow>Por qué elegirnos</Eyebrow>
-      <h2 style={{ marginTop: 16, fontSize: "clamp(32px, 4vw, 52px)", maxWidth: 720 }}>
-        Cuatro razones por las que las familias de Montevideo nos eligen.
+      <h2 style={{ marginTop: 16, fontSize: "clamp(32px, 4vw, 52px)", maxWidth: 720 }}>Cuatro razones por las que las familias, comercios y empresas uruguayas nos eligen.
+
       </h2>
       <div className="why-grid">
         {items.map((it, i) =>
