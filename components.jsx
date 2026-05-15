@@ -3,7 +3,7 @@
    ============================================================ */
 
 const PHONE_RAW = "+59896269359";
-const PHONE_DISPLAY = "+598 96 269 359";
+const PHONE_DISPLAY = "096 269 359";
 const WA_URL = "https://wa.me/59896269359?text=" + encodeURIComponent(
   "Hola Service del Sur, quería consultar por un servicio técnico."
 );
