@@ -605,7 +605,7 @@ function Contact() {
                     <div className="contact-info-icon"><Icon.Mail /></div>
                     <div className="contact-info-text">
                       <small>Email</small>
-                      <strong><a href="mailto:hola@servicedelsur.uy">infoservicedelsur@gmail.com</a></strong>
+                      <strong><a href="mailto:infoservicedelsur@gmail.com">infoservicedelsur@gmail.com</a></strong>
                     </div>
                   </div>
                   <div className="contact-info-item">
@@ -776,7 +776,7 @@ function Footer() {
             <ul>
               <li><a href={`tel:${PHONE_RAW}`}>{PHONE_DISPLAY}</a></li>
               <li><a href={WA_URL} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-              <li><a href="mailto:hola@servicedelsur.uy">infoservicedelsur@gmail.com</a></li>
+              <li><a href="mailto:infoservicedelsur@gmail.com">infoservicedelsur@gmail.com</a></li>
             </ul>
           </div>
         </div>
