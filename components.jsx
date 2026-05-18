@@ -155,7 +155,7 @@ function Nav({ openMenu, setOpenMenu }) {
   }, []);
   React.useEffect(() => {
     document.body.style.overflow = openMenu ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {document.body.style.overflow = "";};
   }, [openMenu]);
   const close = () => setOpenMenu(false);
   return (
@@ -508,19 +508,30 @@ function Quotes() {
 }
 
 /* ---------- contact ---------- */
+const WEB3FORMS_KEY = "1d65d1c1-5368-4cc9-a9e7-10d807b50802";
+
 function Contact() {
   const [form, setForm] = React.useState({
     name: "", phone: "", service: "", zone: "", message: ""
   });
   const [errors, setErrors] = React.useState({});
   const [sent, setSent] = React.useState(false);
+  const [sending, setSending] = React.useState(false);
+  const [sendError, setSendError] = React.useState(null);
 
   const update = (k, v) => {
     setForm((f) => ({ ...f, [k]: v }));
     if (errors[k]) setErrors((e) => ({ ...e, [k]: null }));
   };
 
-  const submit = (e) => {
+  const serviceLabels = {
+    aire: "Aire acondicionado",
+    heladera: "Heladera / Freezer",
+    lavarropas: "Lavarropas",
+    otro: "Otro electrodoméstico"
+  };
+
+  const submit = async (e) => {
     e.preventDefault();
     const errs = {};
     if (!form.name.trim()) errs.name = "Ingresá tu nombre";
@@ -529,8 +540,37 @@ function Contact() {
     if (!form.service) errs.service = "Elegí el servicio que necesitás";
     if (!form.message.trim()) errs.message = "Contanos brevemente el problema";
     setErrors(errs);
-    if (Object.keys(errs).length === 0) {
-      setSent(true);
+    if (Object.keys(errs).length > 0) return;
+
+    setSending(true);
+    setSendError(null);
+    try {
+      const payload = {
+        access_key: WEB3FORMS_KEY,
+        subject: `Nuevo pedido de servicio — ${serviceLabels[form.service] || form.service}`,
+        from_name: "Service del Sur — Web",
+        nombre: form.name,
+        telefono: form.phone,
+        servicio: serviceLabels[form.service] || form.service,
+        barrio: form.zone || "(no indicado)",
+        mensaje: form.message,
+        botcheck: ""
+      };
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSent(true);
+      } else {
+        setSendError(data.message || "No pudimos enviar el mensaje. Intentá nuevamente o llamanos.");
+      }
+    } catch (err) {
+      setSendError("Hubo un problema de conexión. Intentá nuevamente o llamanos.");
+    } finally {
+      setSending(false);
     }
   };
 
@@ -565,7 +605,7 @@ function Contact() {
                     <div className="contact-info-icon"><Icon.Mail /></div>
                     <div className="contact-info-text">
                       <small>Email</small>
-                      <strong><a href="mailto:hola@servicedelsur.uy">hola@servicedelsur.uy</a></strong>
+                      <strong><a href="mailto:hola@servicedelsur.uy">infoservicedelsur@gmail.com</a></strong>
                     </div>
                   </div>
                   <div className="contact-info-item">
@@ -637,10 +677,12 @@ function Contact() {
                         <p className="form-disclaimer">
                           Al enviar, aceptás que un técnico te contacte para coordinar el servicio.
                         </p>
-                        <button type="submit" className="btn btn-primary">
-                          Enviar mensaje <Icon.Arrow />
+                        {sendError && <div className="field-error" style={{ marginBottom: 10 }}>{sendError}</div>}
+                        <button type="submit" className="btn btn-primary" disabled={sending}>
+                          {sending ? "Enviando..." : <>Enviar mensaje <Icon.Arrow /></>}
                         </button>
                       </div>
+                      <input type="checkbox" name="botcheck" style={{ display: "none" }} tabIndex="-1" autoComplete="off" />
                     </>
                 }
                 </form>
